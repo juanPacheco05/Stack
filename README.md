@@ -21,7 +21,8 @@ Para compilar y ejecutar este proyecto necesitas un compilador de C++ con soport
 3. Agrega la ruta del compilador al PATH del sistema (típicamente `C:\mingw64\bin`).
 4. Verifica la instalación abriendo una terminal nueva y ejecutando:
 
-```g++ --version
+```
+g++ --version
 ```
 
 Si devuelve una versión (ejemplo: `g++ 13.2.0`), la instalación fue exitosa.

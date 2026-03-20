@@ -86,7 +86,7 @@ int main() {
     }
 
     std::cout << "\n============================================\n";
-    std::cout << " Proyecto: Wilson Soledad, Sergio Suárez\n";
+    std::cout << " Proyecto: Juan Pacheco, Sergio Suárez\n";
     std::cout << " C++ — Paradigma genérico + Policy-Based Design\n";
     std::cout << "============================================\n";
 

@@ -1,29 +1,18 @@
-// ============================================================
-//  Test.cpp — equivalente a Test.js del proyecto original.
-//
-//  Demuestra MyStack con las dos políticas de almacenamiento
-//  y el manejo de errores con excepciones (sección 2.7).
-//
-//  COMPILACIÓN:
-//    g++ -std=c++17 -o stack Test.cpp && ./stack
-// ============================================================
+
 
 #include <iostream>
 #include <string>
 #include <stdexcept>
-#include "MyStack.h"        // ListPolicy incluida por defecto
-#include "VectorPolicy.h"   // segunda policy
+#include "MyStack.h"        
+#include "VectorPolicy.h"   
 
 int main() {
 
-    // --------------------------------------------------------
     std::cout << "============================================\n";
     std::cout << " DEMO 1: Pila de enteros — ListPolicy\n";
     std::cout << " (lista enlazada, Node vive dentro de la Policy)\n";
     std::cout << "============================================\n";
 
-    // MyStack<int> usa ListPolicy por defecto.
-    // Equivale a: const stack = new MyStack() en Test.js
     MyStack<int> intStack;
 
     intStack.push(10);
@@ -37,7 +26,6 @@ int main() {
         std::cout << "pop() → " << intStack.pop() << "\n";
     }
 
-    // pop() en pila vacía → lanza excepción (sección 2.7)
     std::cout << "\nIntentando pop() en pila vacía:\n";
     try {
         intStack.pop();
@@ -45,7 +33,6 @@ int main() {
         std::cerr << "[EXCEPCIÓN]: " << e.what() << "\n";
     }
 
-    // --------------------------------------------------------
     std::cout << "\n============================================\n";
     std::cout << " DEMO 2: Pila de strings — ListPolicy\n";
     std::cout << "============================================\n";
@@ -59,15 +46,11 @@ int main() {
         std::cout << "pop() → " << strStack.pop() << "\n";
     }
 
-    // --------------------------------------------------------
     std::cout << "\n============================================\n";
     std::cout << " DEMO 3: La MISMA pila con VectorPolicy\n";
     std::cout << " Stack no cambió nada — solo se pasó otra Policy\n";
     std::cout << "============================================\n";
 
-    // Mismo MyStack, diferente Policy de almacenamiento.
-    // Esto demuestra el Open/Closed Principle (sección 2.5):
-    // Stack está cerrado para modificación, abierto para extensión.
     MyStack<int, VectorPolicy> vecStack;
 
     vecStack.push(100);
@@ -87,7 +70,7 @@ int main() {
         std::cerr << "[EXCEPCIÓN]: " << e.what() << "\n";
     }
 
-    // --------------------------------------------------------
+
     std::cout << "\n============================================\n";
     std::cout << " DEMO 4: Pila de doubles — VectorPolicy\n";
     std::cout << " Equivalente a los push() de tipos en Test.js\n";
